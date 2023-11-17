@@ -139,7 +139,7 @@ import validator from 'validator';
             
             <label> Eu concordo com os  </label> 
               
-              <Link to="/termos">
+              <Link to="/termos-professor">
                  Termos de Privacidade.
               </Link>
           {errors?.privacyTerms?.type == "required" &&(<p className={styles.error}>Você precisa concordar com os termos de privacidade.</p>)}

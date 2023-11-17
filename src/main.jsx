@@ -22,7 +22,9 @@ import CadastroAluno from'./components/pages/CadastroAluno';
 import CadProf from "./components/pages/CadProf.jsx";
 import Ranking from './components/pages/ranking.jsx'
 import Termos from './components/pages/termos.jsx';
+import TermosProfessor from "./components/pages/termosProfessor.jsx";
 import HTML1 from './components/pages/HTML1.jsx';
+
 
 
 
@@ -85,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/termos",
         element: <Termos />,
+      },
+      {
+        path: "/termos-professor",
+        element: <TermosProfessor />,
       },
       
       
