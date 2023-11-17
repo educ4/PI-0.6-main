@@ -66,7 +66,7 @@ const Login = () => {
             maxLength="14"
             name="id"
             placeholder={`${userType === 'aluno' ? 'CPF' : 'CFEP'} (com pontos e traços):`}
-            required
+            
             {...register('id', { required: true, minLength: 10, maxLength: 14 })}
           />
           {errors?.id?.type === 'required' && (
@@ -85,7 +85,7 @@ const Login = () => {
             minLength="8"
             name="password"
             placeholder="Digite uma senha de 8 ou mais dígitos."
-            required
+            
             {...register('password', { required: true, minLength: 8 })}
           />
 

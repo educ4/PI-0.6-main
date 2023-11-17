@@ -54,10 +54,10 @@ const CadastroAluno = () => {
               type="text"
               text="CPF: "
               minLength="14"
-               maxLength="14"
+              maxLength="14"
               name="cpf"
               placeholder="CPF (com pontos e traços):"
-              required
+              
               {...register("cpf", { required: true, minLength: 14, maxLength: 14,})} />
             {errors?.cpf?.type == 'required' && (<p className={styles.error}>CPF é requerido</p>)}
             {errors?.cpf?.type == 'minLength' && (<p className={styles.error}> Necessário pelo menos 14 caracteres</p>)}
@@ -71,7 +71,7 @@ const CadastroAluno = () => {
               text="E-mail: "
               name="email"
               placeholder="E-mail"
-              required
+              
               {...register("email", { required: true, validate: (value) => validator.isEmail(value) })} />
             {errors?.email?.type == 'required' && (<p className={styles.error}>E-mail é requerido</p>)}
             {errors?.email?.type == 'validate' && (<p className={styles.error}>E-mail é invalido</p>)}
@@ -103,7 +103,7 @@ const CadastroAluno = () => {
             text="Senha: "
             name="senha"
             placeholder="Digite uma senha de 8 ou mais digítos."
-            required
+           
             {...register("senha", { required: true, minLength: 8})} />
 
           {errors?.senha?.type == 'minLength' && (<p className={styles.error}>Senha precisa de pelo menos 8 caracteres</p>)}
@@ -119,7 +119,7 @@ const CadastroAluno = () => {
             text="Confirmar Senha: "
             name="passwordConfirmation"
             placeholder="Confirme a senha."
-            required
+            
             {...register("passwordConfirmation", { required: true, minLength: 8, validate:(value) => value == watchPassword })} />
           {errors?.passwordConfirmation?.type == 'minLength' && (<p className={styles.error}>Confirmação de Senha precisa de pelo menos 8 caracteres</p>)}
           {errors?.passwordConfirmation?.type == 'validate' && (<p className={styles.error}>Senhas não são iguais.</p>)}

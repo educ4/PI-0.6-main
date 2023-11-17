@@ -56,14 +56,14 @@ import validator from 'validator';
           <div className={styles.box}>
             <label>CFEP: </label>
             <input
-              className={errors?.id && "input-error"}
+              className={errors?.cfep && "input-error"}
               type="text"
               text="CFEP: "
-              minLength = "10"
+              
               maxLength="10"
               name="cfep"
               placeholder="CFEP (com pontos e traços):"
-              required
+              
               {...register("cfep", { required: true, minLength: 10, maxLength: 10,})} />
             {errors?.cfep?.type == 'required' && (<p className={styles.error}>CFEP é requerido</p>)}
             {errors?.cfep?.type == 'minLength' && (<p className={styles.error}> Necessário pelo menos 10 caracteres</p>)}
@@ -77,7 +77,7 @@ import validator from 'validator';
               text="E-mail: "
               name="email"
               placeholder="E-mail"
-              required
+              
               {...register("email", { required: true, validate: (value) => validator.isEmail(value) })} />
             {errors?.email?.type == 'required' && (<p className={styles.error}>E-mail é requerido</p>)}
             {errors?.email?.type == 'validate' && (<p className={styles.error}>E-mail é invalido</p>)}
@@ -109,7 +109,7 @@ import validator from 'validator';
             text="Senha: "
             name="senha"
             placeholder="Digite uma senha de 8 ou mais digítos."
-            required
+            
             {...register("senha", { required: true, minLength: 8})} />
 
           {errors?.senha?.type == 'minLength' && (<p className={styles.error}>Senha precisa de pelo menos 8 caracteres</p>)}
@@ -125,7 +125,7 @@ import validator from 'validator';
             text="Confirmar Senha: "
             name="passwordConfirmation"
             placeholder="Confirme a senha."
-            required
+            
             {...register("passwordConfirmation", { required: true, minLength: 8, validate:(value) => value == watchPassword })} />
           {errors?.passwordConfirmation?.type == 'minLength' && (<p className={styles.error}>Confirmação de Senha precisa de pelo menos 8 caracteres</p>)}
           {errors?.passwordConfirmation?.type == 'validate' && (<p className={styles.error}>Senhas não são iguais.</p>)}
